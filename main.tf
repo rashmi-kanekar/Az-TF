@@ -1,16 +1,15 @@
 terraform {
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "=2.46.0"
+    }
+  }
   backend "remote" {
     organization = "RSKTest2021"
 
     workspaces {
       name = "github-actions-test1"
-    }
-  }
-
-  required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "=2.46.0"
     }
   }
 }
